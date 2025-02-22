@@ -14,7 +14,7 @@ namespace DoctorMedE.Survivors.Doctor
     public class Doctor : SurvivorBase<Doctor>
     {
         //used to load the assetbundle for this character. must be unique
-        public override string assetBundleName => "doctor";
+        public override string assetBundleName => "ddndocbundle";
 
         //the name of the prefab we will create. conventionally ending in "Body". must be unique
         public override string bodyName => "DoctorBody";
@@ -23,8 +23,8 @@ namespace DoctorMedE.Survivors.Doctor
         public override string masterName => "DoctorMonsterMaster";
 
         //the names of the prefabs you set up in unity that we will use to build your character
-        public override string modelPrefabName => "mdlHenry";
-        public override string displayPrefabName => "HenryDisplay";
+        public override string modelPrefabName => "mdlDoctor";
+        public override string displayPrefabName => "DoctorDisplay";
 
         public const string DOCTOR_PREFIX = DoctorPlugin.DEVELOPER_PREFIX + "_DOCTOR_";
 
