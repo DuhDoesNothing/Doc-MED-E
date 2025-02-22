@@ -1,41 +1,41 @@
 ﻿using BepInEx.Configuration;
-using HenryMod.Modules;
-using HenryMod.Modules.Characters;
-using HenryMod.Survivors.Henry.Components;
-using HenryMod.Survivors.Henry.SkillStates;
+using DoctorMedE.Modules;
+using DoctorMedE.Modules.Characters;
+using DoctorMedE.Survivors.Doctor.Components;
+using DoctorMedE.Survivors.Henry.SkillStates;
 using RoR2;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HenryMod.Survivors.Henry
+namespace DoctorMedE.Survivors.Doctor
 {
-    public class HenrySurvivor : SurvivorBase<HenrySurvivor>
+    public class Doctor : SurvivorBase<Doctor>
     {
         //used to load the assetbundle for this character. must be unique
-        public override string assetBundleName => "myassetbundle"; //if you do not change this, you are giving permission to deprecate the mod
+        public override string assetBundleName => "doctor";
 
         //the name of the prefab we will create. conventionally ending in "Body". must be unique
-        public override string bodyName => "HenryBody"; //if you do not change this, you get the point by now
+        public override string bodyName => "DoctorBody";
 
         //name of the ai master for vengeance and goobo. must be unique
-        public override string masterName => "HenryMonsterMaster"; //if you do not
+        public override string masterName => "DoctorMonsterMaster";
 
         //the names of the prefabs you set up in unity that we will use to build your character
         public override string modelPrefabName => "mdlHenry";
         public override string displayPrefabName => "HenryDisplay";
 
-        public const string HENRY_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_HENRY_";
+        public const string DOCTOR_PREFIX = DoctorPlugin.DEVELOPER_PREFIX + "_DOCTOR_";
 
         //used when registering your survivor's language tokens
-        public override string survivorTokenPrefix => HENRY_PREFIX;
+        public override string survivorTokenPrefix => DOCTOR_PREFIX;
         
         public override BodyInfo bodyInfo => new BodyInfo
         {
             bodyName = bodyName,
-            bodyNameToken = HENRY_PREFIX + "NAME",
-            subtitleNameToken = HENRY_PREFIX + "SUBTITLE",
+            bodyNameToken = DOCTOR_PREFIX + "NAME",
+            subtitleNameToken = DOCTOR_PREFIX + "SUBTITLE",
 
             characterPortrait = assetBundle.LoadAsset<Texture>("texHenryIcon"),
             bodyColor = Color.white,
@@ -68,9 +68,9 @@ namespace HenryMod.Survivors.Henry
                 }
         };
 
-        public override UnlockableDef characterUnlockableDef => HenryUnlockables.characterUnlockableDef;
+        public override UnlockableDef characterUnlockableDef => DoctorUnlockables.characterUnlockableDef;
         
-        public override ItemDisplaysBase itemDisplays => new HenryItemDisplays();
+        public override ItemDisplaysBase itemDisplays => new DoctorItemDisplays();
 
         //set in base classes
         public override AssetBundle assetBundle { get; protected set; }
@@ -95,16 +95,16 @@ namespace HenryMod.Survivors.Henry
         public override void InitializeCharacter()
         {
             //need the character unlockable before you initialize the survivordef
-            HenryUnlockables.Init();
+            DoctorUnlockables.Init();
 
             base.InitializeCharacter();
 
-            HenryConfig.Init();
-            HenryStates.Init();
-            HenryTokens.Init();
+            DoctorConfig.Init();
+            DoctorStates.Init();
+            DoctorTokens.Init();
 
-            HenryAssets.Init(assetBundle);
-            HenryBuffs.Init(assetBundle);
+            DoctorAssets.Init(assetBundle);
+            DoctorBuffs.Init(assetBundle);
 
             InitializeEntityStateMachines();
             InitializeSkills();

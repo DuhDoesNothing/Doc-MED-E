@@ -1,10 +1,10 @@
 ﻿using EntityStates;
-using HenryMod.Survivors.Henry;
+using DoctorMedE.Survivors.Henry;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace HenryMod.Survivors.Henry.SkillStates
+namespace DoctorMedE.Survivors.Henry.SkillStates
 {
     public class Roll : BaseSkillState
     {
@@ -52,7 +52,7 @@ namespace HenryMod.Survivors.Henry.SkillStates
 
             if (NetworkServer.active)
             {
-                characterBody.AddTimedBuff(HenryBuffs.armorBuff, 3f * duration);
+                characterBody.AddTimedBuff(DoctorBuffs.armorBuff, 3f * duration);
                 characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * duration);
             }
         }

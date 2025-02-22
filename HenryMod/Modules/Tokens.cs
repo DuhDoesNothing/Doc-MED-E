@@ -1,4 +1,4 @@
-﻿namespace HenryMod.Modules
+﻿namespace DoctorMedE.Modules
 {
     internal static class Tokens
     {

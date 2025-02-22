@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HenryMod.Survivors.Henry.Components
+namespace DoctorMedE.Survivors.Doctor.Components
 {
     internal class HenryWeaponComponent : MonoBehaviour
     {

@@ -1,8 +1,8 @@
-﻿using HenryMod.Modules.BaseStates;
+﻿using DoctorMedE.Modules.BaseStates;
 using RoR2;
 using UnityEngine;
 
-namespace HenryMod.Survivors.Henry.SkillStates
+namespace DoctorMedE.Survivors.Henry.SkillStates
 {
     public class SlashCombo : BaseMeleeAttack
     {
@@ -11,7 +11,7 @@ namespace HenryMod.Survivors.Henry.SkillStates
             hitboxGroupName = "SwordGroup";
 
             damageType = DamageTypeCombo.GenericPrimary;
-            damageCoefficient = HenryStaticValues.swordDamageCoefficient;
+            damageCoefficient = DoctorStaticValues.swordDamageCoefficient;
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
@@ -33,10 +33,10 @@ namespace HenryMod.Survivors.Henry.SkillStates
             hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
             playbackRateParam = "Slash.playbackRate";
-            swingEffectPrefab = HenryAssets.swordSwingEffect;
-            hitEffectPrefab = HenryAssets.swordHitImpactEffect;
+            swingEffectPrefab = DoctorAssets.swordSwingEffect;
+            hitEffectPrefab = DoctorAssets.swordHitImpactEffect;
 
-            impactSound = HenryAssets.swordHitSoundEvent.index;
+            impactSound = DoctorAssets.swordHitSoundEvent.index;
 
             base.OnEnter();
         }

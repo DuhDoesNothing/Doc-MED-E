@@ -1,8 +1,8 @@
-﻿using HenryMod.Survivors.Henry.SkillStates;
+﻿using DoctorMedE.Survivors.Henry.SkillStates;
 
-namespace HenryMod.Survivors.Henry
+namespace DoctorMedE.Survivors.Doctor
 {
-    public static class HenryStates
+    public static class DoctorStates
     {
         public static void Init()
         {

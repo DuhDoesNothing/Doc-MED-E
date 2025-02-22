@@ -2,9 +2,9 @@
 using RoR2.CharacterAI;
 using UnityEngine;
 
-namespace HenryMod.Survivors.Henry
+namespace DoctorMedE.Survivors.Doctor
 {
-    public static class HenryAI
+    public static class DoctorAI
     {
         public static void Init(GameObject bodyPrefab, string masterName)
         {
